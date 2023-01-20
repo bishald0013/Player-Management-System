@@ -1,10 +1,14 @@
-const express = require('express')
+import userRouter from "./routes/router.js"
+import connectDB from "./config/config.js"
+import express,{json} from "express"
+
 const app = express()
 const port = 8000
 
-app.get("/", (req, res) => {
-    res.status(200).send({status: "success", msg: "This is get route"})
-})
+connectDB()
+
+app.use(express.json())
+app.use("/api/manager", userRouter)
 
 app.listen(port, () => {
     console.log(`Server is running at port:${port}`)
