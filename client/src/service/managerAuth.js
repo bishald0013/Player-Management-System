@@ -33,7 +33,19 @@ export const managerAuthApi = createApi({
             }
         }),
 
+        getLoggedManager: builder.query({
+            query: (token) => {
+                return {
+                    url: "loggedManger",
+                    method: "GET",
+                    headers:{
+                        "authorization":`Bearer ${token}`
+                    }
+                }
+            }
+        }),
+
     })
 })
 
-export const { useRegisterManagerMutation, useLoginManagerMutation } = managerAuthApi
+export const { useRegisterManagerMutation, useLoginManagerMutation, useGetLoggedManagerQuery } = managerAuthApi

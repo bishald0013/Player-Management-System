@@ -74,6 +74,14 @@ class ManagerController {
         console.log(error)
     }
   }
+
+  static getLoggedManager = async (req,res) => {
+    try {
+      res.status(200).send({status: "success", user: req.user})
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
 
 export default ManagerController
