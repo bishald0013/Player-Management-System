@@ -1,7 +1,11 @@
 import React from 'react'
+import {useNavigate} from "react-router-dom"
+import { setToken } from '../../service/localStorage'
 import { useRegisterManagerMutation } from '../../service/managerAuth'
 
 function SignUp() {
+
+  const navigate = useNavigate()
 
   const [registerManager] = useRegisterManagerMutation()
 
@@ -21,7 +25,12 @@ function SignUp() {
 
     if(email && password && name && sports){
       const res = await registerManager(formData)
-      console.log(res)
+      setToken(res.data.token)
+
+      if(res.data.status === "success"){
+        navigate('/deshbord')
+      }
+
     }else{
       console.log('all fields are required')
     }

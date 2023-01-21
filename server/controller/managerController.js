@@ -53,7 +53,6 @@ class ManagerController {
   static managerLogin = async (req, res) => {
     try {
         const { email, password } = req.body
-
         if(email && password) {
             const UserEmail = await ManagerModel.findOne({email: email})
             if(!UserEmail){

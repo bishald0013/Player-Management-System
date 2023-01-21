@@ -20,7 +20,20 @@ export const managerAuthApi = createApi({
             }
         }),
 
+        loginManager: builder.mutation({
+            query: (user) =>{
+                return{
+                    url:"managerLogin",
+                    method:"POST",
+                    body:user,
+                    headers:{
+                        "Content-type":"application/json"
+                    }
+                }
+            }
+        }),
+
     })
 })
 
-export const { useRegisterManagerMutation } = managerAuthApi
+export const { useRegisterManagerMutation, useLoginManagerMutation } = managerAuthApi
