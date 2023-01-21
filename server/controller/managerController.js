@@ -34,7 +34,7 @@ class ManagerController {
 
           res
             .status(200)
-            .send({ status: 'success', msg: newManager, token: token })
+            .send({ status: 'success', msg: "Successfully created manager", token: token })
         } else {
           res
             .status(400)

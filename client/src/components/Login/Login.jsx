@@ -1,16 +1,31 @@
 import React from 'react'
 
 function Login() {
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+    const loginData = new FormData(e.currentTarget)
+
+    const data = {
+      email: loginData.get('email'),
+      password: loginData.get('password')
+    }
+
+    console.log(data)
+
+  }
   return (
     <div className='container w-25 mt-5'>
-      <form>
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <form id='login_form' onSubmit={handleSubmit}>
+        <h1 class="h3 mb-3 fw-normal">Please LogIn</h1>
 
-        <div class="form-floating">
+        <div class="form-floating my-2">
           <input
             type="email"
+            name='email'
             class="form-control"
-            id="floatingInput"
+            id="email"
             placeholder="name@example.com"
           />
           <label for="floatingInput">Email address</label>
@@ -18,20 +33,15 @@ function Login() {
         <div class="form-floating">
           <input
             type="password"
+            name='password'
             class="form-control"
-            id="floatingPassword"
+            id="password"
             placeholder="Password"
           />
           <label for="floatingPassword">Password</label>
         </div>
-
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">
-          Sign in
+        <button class="w-100 btn btn-lg btn-primary my-2" type="submit">
+          LogIn
         </button>
       </form>
     </div>

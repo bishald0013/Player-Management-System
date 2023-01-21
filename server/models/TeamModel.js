@@ -8,11 +8,6 @@ const teamSchema = mongoose.Schema({
     matchPlayed: {type: Number, require: true},
     matchWin: {type: Number, require: true},
     matchLoose: {type: Number, require: true},
-    teamPlayers: [{
-        playersName: String,
-        playersEmail: String,
-        playersRating: Number
-    }] 
 })
 
 const TeamModel = mongoose.model("Team", teamSchema)
