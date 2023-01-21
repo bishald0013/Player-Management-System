@@ -5,6 +5,8 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import { getToken } from './service/localStorage';
+import CreateTeam from './Pages/createTeam/CreateTeam';
+import AddPlayers from './Pages/AddPlayers/AddPlayers';
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/signeUp' element={<SignUp />} />
           <Route path='/deshbord' element={ <Dashbord/>} />
+          <Route path='/createTeam' element={<CreateTeam />} />
+          <Route path='/addPlayers' element={<AddPlayers/>} />
         </Routes>
       </BrowserRouter>
     </div>
