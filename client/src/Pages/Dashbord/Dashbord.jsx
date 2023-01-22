@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import TeamDetails from '../TeamDetails/TeamDetails'
 import CreateTeam from '../createTeam/CreateTeam'
 import AddPlayers from '../AddPlayers/AddPlayers'
+import DisplayPlayers from '../AddPlayers/DisplayPlayers'
 
 function Dashbord() {
   let token = getToken()
@@ -67,7 +68,12 @@ function Dashbord() {
             </div>
           </div>
           <div className="col-lg-6">
-            <TeamDetails token={token} />
+            <div className="teamDetails">
+              <TeamDetails token={token} />
+            </div>
+            <div className="playerDetails">
+              <DisplayPlayers />
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAddPlayerMutation } from "../../service/playerApi";
 
 function AddPlayers({managerName, managerEmail}) {
@@ -6,7 +6,7 @@ function AddPlayers({managerName, managerEmail}) {
   const [addPlayer] = useAddPlayerMutation()
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
 
     const data = new FormData(e.currentTarget)
 
@@ -43,7 +43,7 @@ function AddPlayers({managerName, managerEmail}) {
           </div>
           <div class="col">
               <input
-                type="text"
+                type="number"
                 name="rating"
                 id="rating"
                 class="form-control"

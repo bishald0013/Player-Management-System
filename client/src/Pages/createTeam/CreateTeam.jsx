@@ -1,18 +1,13 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { getToken } from "../../service/localStorage";
-import { useGetLoggedManagerQuery } from "../../service/managerAuth"
 import { useCreateTeamMutation } from "../../service/teamApi";
-import AddPlayers from "../AddPlayers/AddPlayers";
+
 
 function CreateTeam({managerEmail, managerName}) {
 
   const [CreateTeam] = useCreateTeamMutation()
           
   const handleSubmit = async (e) =>{
-      e.preventDefault()
+  
     const data = new FormData(e.currentTarget)
 
     const formData = {
@@ -35,7 +30,7 @@ function CreateTeam({managerEmail, managerName}) {
     }else{
       console.log("Team name is required")
     }
-    console.log(formData)
+    // console.log(formData)
   }
 
   return (

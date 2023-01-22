@@ -20,8 +20,20 @@ export const playerApi = createApi({
             }
         }),
 
+        getPlayer: builder.query({
+            query:(token)=>{
+                return{
+                    url:"getPlayer",
+                    method:"GET",
+                    headers:{
+                        "authorization":`Bearer ${token}`
+                    }
+                }
+            }
+        }),
+
     })
 })
 
-export const { useAddPlayerMutation } = playerApi
+export const { useAddPlayerMutation, useGetPlayerQuery } = playerApi
 

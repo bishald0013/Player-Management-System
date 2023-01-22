@@ -11,7 +11,7 @@ class PlayerController {
                 managerName: managerName,
                 managerEmail: managerEmail
             })
-            await newPlayer.save()
+            await newPlayer.save().sort({'rating': -1})
             res.status(200).send({status: "success", data: newPlayer})
 
         } catch (error) {
@@ -22,7 +22,7 @@ class PlayerController {
     static getPlayer = async (req, res) =>{
         try {
             const {email} = req.user
-            const data = await PlayerModel.find(({managerEmail: email}))
+            const data = await PlayerModel.find(({managerEmail: email})).sort({'rating':-1})
             res.status(200).send({status: "success", msg: data})
         } catch (error) {
             res.status(400).send({status: "fails", msg: error})
