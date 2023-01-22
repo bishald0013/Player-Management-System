@@ -21,16 +21,17 @@ export const teamApi = createApi({
         }),
 
         getManagerTeam: builder.query({
-            query: (email) =>{
+            query: (token) =>{
                 return{
-                    url:`getTeam/${email}`,
+                    url:`getTeam`,
                     method:"GET",
                     headers:{
-                        "Content-type":"application/json"
+                        "authorization":`Bearer ${token}`
                     }
                 }
             }
-        })
+        }),
+
     })
 })
 

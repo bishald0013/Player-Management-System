@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 const playerSchema = mongoose.Schema({
     playerName: {type: String, require: true},
-    teamName: {type: String},
-    rating: {type: Number},
+    rating: {type: String},
     managerName: {type: String},
     managerEmail: {type: String, require: true},
 })

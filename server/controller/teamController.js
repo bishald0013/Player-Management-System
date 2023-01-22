@@ -35,11 +35,9 @@ class TeamController {
 
     static getTeam = async(req,res)=>{
         try {
-            const {email} = req.params
-            const team = await TeamModel.findOne({email})
-
+            const {email} = req.user
+            const team = await TeamModel.find(({managerEmail: email}))
             res.status(200).send({status: "success", team: team })
-            
         }catch (error) {
             console.log(error)
         }

@@ -40,7 +40,7 @@ function CreateTeam({managerEmail, managerName}) {
 
   return (
     <div className="container my-5">
-      <h1>Create your Team</h1>
+      <h1 className="fs-3">Create your Team</h1>
       <div className="container mt-4 w-50">
         <form id="create_team" onSubmit={handleSubmit}>
           <div class="row g-3">
@@ -100,11 +100,6 @@ function CreateTeam({managerEmail, managerName}) {
           <button type="submit" class="btn btn-outline-secondary my-3">create Team</button>
         </form>
       </div>
-      {/* <div className="container">
-        <Link to="/addPlayers">
-            <button type="button" class="btn btn-outline-secondary">AddPlayers</button>
-        </Link>
-      </div> */}
     </div>
   );
 }

@@ -10,8 +10,10 @@ connectDB()
 
 app.use(cors())
 app.use(express.json())
+
 app.use("/api/manager", userRouter)
 app.use("/api/team", userRouter)
+app.use("/api/player", userRouter)
 
 app.listen(port, () => {
     console.log(`Server is running at port:${port}`)
