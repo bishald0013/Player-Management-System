@@ -12,14 +12,15 @@ function App() {
 
   let token = getToken()
 
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/login' element={ <Login/>} />
+          <Route path='/home' element={<Home/>} />
+          <Route path='/login' element={ !token ? <Login/> : <Navigate to="/deshbord" />} />
           <Route path='/signeUp' element={<SignUp />} />
-          <Route path='/deshbord' element={ <Dashbord/>} />
+          <Route path='/deshbord' element={ token ? <Dashbord/> : <Navigate to="/login" />} />
           <Route path='/createTeam' element={<CreateTeam />} />
           <Route path='/addPlayers' element={<AddPlayers/>} />
         </Routes>
