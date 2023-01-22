@@ -2,10 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { getToken } from '../../service/localStorage'
+import { useGetManagerTeamQuery } from '../../service/teamApi'
 import { useGetLoggedManagerQuery } from '../../service/managerAuth'
 import { removeToken } from '../../service/localStorage'
 import { useEffect, useState } from 'react'
 import TeamDetails from '../TeamDetails/TeamDetails'
+import CreateTeam from '../createTeam/CreateTeam'
 
 function Dashbord() {
   let token = getToken()
@@ -30,6 +32,8 @@ function Dashbord() {
 
   const { managerName, managerEmail } = manager
 
+  //get team
+
   const handleClick = (e) => {
     e.preventDefault()
     removeToken('token')
@@ -48,14 +52,15 @@ function Dashbord() {
         <button type="button" onClick={handleClick} class="btn btn-dark mx-3">
           LogOut
         </button>
-        <Link to="/createTeam">
-        <button type="button" class="btn btn-dark mx-3">
-          CreateTeam
-        </button>
-        </Link>
       </div>
       <div className='container my-3'>
-        <TeamDetails />
+       <div className="row">
+        <div className="col-lg-6">
+          <CreateTeam managerName={managerName} managerEmail={managerEmail}/>
+        </div>
+        <div className="col-lg-6">
+        </div>
+       </div>
       </div>
     </div>
   )
