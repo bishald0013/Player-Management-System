@@ -1,3 +1,3 @@
 # Player-Management-System
 
-##to run clientSide
+to run clientSide
