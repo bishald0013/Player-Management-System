@@ -22,7 +22,7 @@ function AllSports() {
   console.log(teams)
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
        <table className="table table-success table-striped">
         <thead>
           <tr>

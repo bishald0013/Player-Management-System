@@ -6,6 +6,7 @@ import { useAllPlayersQuery } from '../../service/adminApi'
 
 function AllPlayerName() {
 
+  const [search, setSearch] = useState("")
   const [allPlayers, setAllPlayers] = useState({
     players: []
   })
@@ -25,6 +26,17 @@ function AllPlayerName() {
 
   return (
     <div className="container">
+      <div className="search w-50 my-3" style={{marginLeft: "8rem"}}>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+      </div>
       <table className="table table-success table-striped">
         <thead>
           <tr>
@@ -36,7 +48,11 @@ function AllPlayerName() {
       </table>
 
       {
-        players.map((p)=> {
+        players.filter((item) => {
+          return search.toLowerCase() === "" 
+          ? item 
+          : item.playerName.toLowerCase().includes(search)
+        }).map((p)=> {
           return ( <PlayersDetails p={p} key={p._id} /> )
         })
       }

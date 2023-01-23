@@ -24,7 +24,7 @@ function AllManagers() {
 
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
        <table className="table table-success table-striped">
         <thead>
           <tr>
