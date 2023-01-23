@@ -44,7 +44,6 @@ function DisplayPlayers() {
           <tr>
             <th scope="col">Player Name</th>
             <th scope="col">Rating</th>
-            <th scope="col">Match Played</th>
           </tr>
         </thead>
       </table>

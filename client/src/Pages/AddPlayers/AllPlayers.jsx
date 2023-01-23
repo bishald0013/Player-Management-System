@@ -8,7 +8,6 @@ function AllPlayers({ p }) {
           <tr>
             <td>{p.playerName}</td>
             <td>{p.rating}</td>
-            <td>10</td>
           </tr>
         </tbody>
       </table>

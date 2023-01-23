@@ -5,6 +5,8 @@ import { useAdminLoginMutation } from '../service/adminApi'
 
 function Admin() {
 
+  let stat
+
   const [adminLogin] = useAdminLoginMutation()
 
   const navigate = useNavigate()
@@ -25,10 +27,13 @@ function Admin() {
         
         if(res.data.status === 'success'){
           navigate('/adminDeshbord')
+          stat = res.data.status
         }
     }
 
   }
+
+  console.log(stat)
 
   return (
     <div className='container w-25' style={{marginTop: "10rem"}}>
