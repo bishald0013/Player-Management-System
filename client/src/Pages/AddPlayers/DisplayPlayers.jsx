@@ -6,7 +6,7 @@ import { useGetPlayerQuery } from '../../service/playerApi'
 import AllPlayers from './AllPlayers'
 
 function DisplayPlayers() {
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState("")
   const [players, setPlayers] = useState({
     allPlayers: [],
   })
@@ -26,11 +26,9 @@ function DisplayPlayers() {
   console.log(allPlayers)
   // console.log(data.msg)
 
-  console.log(search)
-
   return (
     <div className="container">
-      <div className="search w-50 my-3">
+      <div className="search w-50 my-3" style={{marginLeft: "10rem"}}>
         <form class="d-flex" role="search">
           <input
             class="form-control me-2"
@@ -50,19 +48,16 @@ function DisplayPlayers() {
           </tr>
         </thead>
       </table>
-      <tbody>
+ 
         {allPlayers.filter((item) => {
           return search.toLowerCase() === "" 
           ? item 
           : item.playerName.toLowerCase().includes(search)
-        }).map((p) => (
-          <tr key={p._id}>
-            <td>{p.playerName}</td>
-            <td>{p.rating}</td>
-            <td>10</td>
-          </tr>
-        ))}
-      </tbody>
+        }).map((p) => {
+          return (<AllPlayers p={p} key={p._id} />)
+        }
+        )}
+   
     </div>
   )
 }

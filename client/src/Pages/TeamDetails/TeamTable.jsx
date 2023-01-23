@@ -17,7 +17,7 @@ function TeamTable({t}) {
             <td>{t.teamName}</td>
             <td>{t.matchPlayed}</td>
             <td>{t.matchWin}</td>
-        <td>{t.matchLoose}</td>
+            <td>{t.matchLoose}</td>
         </tr>
         </tbody>
       </table>

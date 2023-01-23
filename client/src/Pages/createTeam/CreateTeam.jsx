@@ -81,6 +81,7 @@ function CreateTeam({managerEmail, managerName}) {
                 aria-label="Last name"
               />
             </div>
+            <div className="row g-3 my-3">
             <div class="col">
               <input
                 type="text"
@@ -90,6 +91,7 @@ function CreateTeam({managerEmail, managerName}) {
                 placeholder="Match loose"
                 aria-label="Last name"
               />
+            </div>
             </div>
           </div>
           <button type="submit" class="btn btn-outline-secondary my-3">create Team</button>
