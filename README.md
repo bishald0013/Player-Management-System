@@ -14,7 +14,7 @@
     npm start - in client side
     npm run dev - in server side
 
-### Login to admin pannel 
+### Login to admin panel 
     route - /admin/login
 
 ## Admin Login email and password
