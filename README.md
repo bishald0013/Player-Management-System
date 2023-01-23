@@ -2,7 +2,7 @@
 
 ### Download the Project
     
-## npm install to download both the node mondule in client_side and server_side
+## npm install to download both the node modules in client_side and server_side
    
     cd client/
     npm install
