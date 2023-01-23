@@ -1,3 +1,3 @@
 # Player-Management-System
 
-#download the projet file
+##to run clientSide
