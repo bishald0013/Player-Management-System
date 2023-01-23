@@ -3,6 +3,10 @@
 ### Download the Project
     
 ## npm install to download both the node mondule in client_side and server_side
+   cd client/
+    npm install
+   cd server/
+    npm install
     
 ## To run the project
     npm start - in client side
