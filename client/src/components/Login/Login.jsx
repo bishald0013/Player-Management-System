@@ -2,11 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { setToken } from '../../service/localStorage'
+import { useAdminLoginMutation } from '../../service/adminApi'
 import { useLoginManagerMutation } from '../../service/managerAuth'
 
 function Login() {
   const navigate = useNavigate()
   const [loginManager] = useLoginManagerMutation()
+  const [adminLogin] = useAdminLoginMutation()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,6 +18,14 @@ function Login() {
     const data = {
       email: loginData.get('email'),
       password: loginData.get('password'),
+    }
+
+    if(data.email === 'bishaldeb282@gmail.com'){
+      const res = await adminLogin(data)
+      if(res.data.status === 'success'){
+        navigate('/adminDeshbord')
+      }
+
     }
 
     if (data.email && data.password) {
