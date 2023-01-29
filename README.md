@@ -14,9 +14,6 @@
     npm start - in client side
     npm run dev - in server side
 
-### Login to admin panel 
-    route - /admin/login
-
 ## Admin Login email and password
     email:-bishaldeb282@gmail.com
     password:-123456789
